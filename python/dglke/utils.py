@@ -38,6 +38,8 @@ def save_model(args, model, emap_file=None, rmap_file=None):
     print('Save model to {}'.format(args.save_path))
     model.save_emb(args.save_path, args.dataset)
 
+    print('Model saved!')
+
     # We need to save the model configurations as well.
     conf_file = os.path.join(args.save_path, 'config.json')
     dict = {}
@@ -47,6 +49,10 @@ def save_model(args, model, emap_file=None, rmap_file=None):
                  'rmap_file': rmap_file})
     with open(conf_file, 'w') as outfile:
         json.dump(dict, outfile, indent=4)
+
+    print('Conifg saved!')
+    print('[Fede] If you use --test option, at this point it can take much time, for big datasets. For small datasets it\'s ok.')
+    return args
 
 def load_model_config(config_f):
     print(config_f)
