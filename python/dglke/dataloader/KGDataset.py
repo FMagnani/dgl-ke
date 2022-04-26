@@ -19,7 +19,7 @@
 
 import os, sys
 import numpy as np
-from ogb.lsc import WikiKG90MDataset, WikiKG90MEvaluator
+#from ogb.lsc import WikiKG90MDataset, WikiKG90MEvaluator
 
 def _download_and_extract(url, path, filename):
     import shutil, zipfile
@@ -395,7 +395,7 @@ class KGDatasetFreebase(KGDataset):
     @property
     def rmap_fname(self):
         return 'relation2id.txt'
-
+"""
 class KGDatasetWikikg2(KGDataset):
     '''Load a knowledge graph wikikg2
 
@@ -431,7 +431,7 @@ class KGDatasetWikikg2(KGDataset):
     @property
     def rmap_fname(self):
         return 'relations.dict'
-
+"""
 class KGDatasetBiokg(KGDataset):
     '''Load a knowledge graph biokg
 
@@ -467,7 +467,7 @@ class KGDatasetBiokg(KGDataset):
     @property
     def rmap_fname(self):
         return 'relations.dict'
-
+"""
 class KGDatasetWiki90M(KGDataset):
     '''Load a knowledge graph wikikg90M
     
@@ -501,7 +501,7 @@ class KGDatasetWiki90M(KGDataset):
     @property
     def rmap_fname(self):
         return None
-
+"""
 class KGDatasetUDDRaw(KGDataset):
     '''Load a knowledge graph user defined dataset
 
@@ -737,24 +737,7 @@ class KGDatasetUDD(KGDataset):
 
 def get_dataset(data_path, data_name, format_str, delimiter='\t', files=None, has_edge_importance=False):
     if format_str == 'built_in':
-        if data_name == 'Freebase':
-            dataset = KGDatasetFreebase(data_path)
-        elif data_name == 'FB15k':
-            dataset = KGDatasetFB15k(data_path)
-        elif data_name == 'FB15k-237':
-            dataset = KGDatasetFB15k237(data_path)
-        elif data_name == 'wn18':
-            dataset = KGDatasetWN18(data_path)
-        elif data_name == 'wn18rr':
-            dataset = KGDatasetWN18rr(data_path)
-        elif data_name == 'wikikg2':
-            dataset = KGDatasetWikikg2(data_path)
-        elif data_name == 'biokg':
-            dataset = KGDatasetBiokg(data_path)
-        elif data_name == 'wikikg90M':
-            dataset = KGDatasetWiki90M(data_path)
-        else:
-            assert False, "Unknown dataset {}".format(data_name)
+        assert False, "Unknown dataset {}".format(data_name)
     elif format_str.startswith('raw_udd'):
         # user defined dataset
         assert data_name != 'FB15k', 'You should provide the dataset name for raw_udd format.'
@@ -832,3 +815,4 @@ def get_server_partition_dataset(data_path, data_name, part_id):
     local_to_global = None
 
     return global_to_local, dataset
+   
