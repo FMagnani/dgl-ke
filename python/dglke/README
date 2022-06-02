@@ -1,15 +1,12 @@
 This version is not official. 
 
 Conda ALWAYS installed the STABLE version, even if I was asking for the LATEST!!!
-Therefore, I had to MANUALLY download the latest into this directory.
+Therefore, I had to MANUALLY download the latest into my local directory.
 
-Anyway, it gave me problems... maybe, being the latest, it had some bugs. In any case, since the problematic code was related to things that I did not need at the time (in particular: built-in datasets), I simply DELETED it.
+Anyway, it still gave me problems... maybe, being the latest, it had some bugs.  
+In any case, since the problematic code was related to things that I did not need at the time (in particular: built-in datasets), I simply DELETED it.  
 
 If you really need the code related to the built-in datasets (as FB15k-237, FB15K, wiki-something etc) you have two possibilities:
 1- Download them separately and then process them as external datasets (some additional work is needed in this case)
 2- Try to download the latest version and use it (maybe, at the time you are reading this message, all works well finally)
 In particular, I had these problems in March 2022. You can check if the repo has been updated in the meanwhile.
-
-That said, I wish you good luck. 
-
-                                                         Fede
