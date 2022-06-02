@@ -13,6 +13,7 @@ In particular, I had these problems in March 2022. You can check if the repo has
 
 ### How to install this version
 For my pc the following works (You can change the name of the env in the first line of `environment.yml`):  
+`conda env create -f environment.yml`
 `conda activate NAME`  
 `git clone https://github.com/FMagnani/dgl-ke.git`  
 `cd dgl-ke/python`  
